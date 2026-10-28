@@ -1,0 +1,15 @@
+# Figure sources and rendering
+
+Run `python scripts/build_figures.py` from the repository root to regenerate the five PNG figures. Only Matplotlib and its normal dependencies are needed. The script embeds the minimum chart inputs transcribed from the **saved text outputs** of the supplied `test_v2.ipynb`; it does not open the private workbook, make network requests, or rerun the underlying analysis.
+
+Cell numbers below are zero-based positions in that source notebook.
+
+| Figure | Saved output | Transcription and interpretation |
+| --- | --- | --- |
+| `01_priority_scores.png` | Cell 4 | All 11 printed CVS values and the exact Low / Med / High risk-tolerance labels. Scores retain six decimals in the script and display three. CVS is a weighted prioritization index, not a calibrated probability. |
+| `02_coverage_gaps.png` | Cell 5 | Lead time and days of supply for the six flagged U.S.-origin records. Source row IDs and other inventory fields are omitted. A/B are anonymous display suffixes, assigned in source output order. Gaps are computed as days of supply minus lead time. |
+| `03_tariff_scenario.png` | Cell 3 | All 11 category item counts, U.S.-origin item counts and printed annual spends. The scenario recomputes `spend × U.S. item count / item count × 0.35`. Scientific-notation spend inputs in the saved output were already rounded, so recomputation can differ by a few dollars from the original saved total of $70,707,874. The figure intentionally shows approximately CAD 70.7 million and category values to CAD 0.1 million. Currency follows the original case report. The 35% rate is a historical case assumption, not a claim about current tariffs. |
+| `04_import_dependence.png` | Cell 7; labels from cell 11 | All 10 HS codes and the printed 2021 and 2024 shares, retaining one decimal place. Short category aliases come directly from the notebook's `hs_labels` dictionary, rather than newly inferred classifications. Percentage-point differences are calculated from those rounded shares. No external trade series was downloaded or independently verified. |
+| `05_supplier_screen.png` | Cell 6 | All 11 categories and all five performance columns, including Poor. Display columns are reordered for readability; counts are unchanged. The original code selects `RestrictedUSVendor != 'Y'`, which does not by itself establish country of origin, qualification, capacity, or unique supplier counts. Values other than Y, including missing values, could pass the original filter. |
+
+Category labels are expanded for readability without combining rows. The dictionary in the rendering script preserves the mapping to source labels. The supplier matrix follows the priority chart's category order. The coverage chart contains only the two measures required for its six anonymous plotted records; the other charts use category or trade aggregates. These figures document the supplied historical case results and their limitations; successful rendering is not validation of the underlying workbook.

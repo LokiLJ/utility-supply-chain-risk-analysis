@@ -1,0 +1,6 @@
+# Dependency inventory; original environment versions were not recorded.
+pandas
+numpy
+matplotlib
+openpyxl
+jupyterlab

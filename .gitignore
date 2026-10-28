@@ -1,0 +1,36 @@
+# Private case materials and local copies of the group report
+data/private/
+Supplement_data.xlsx
+*.xlsx
+*.xls
+*.pdf
+*.docx
+*.tex
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+credentials*
+secrets/
+.secrets/
+*.pem
+*.key
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
